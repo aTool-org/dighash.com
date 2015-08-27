@@ -25,11 +25,10 @@ td {
 }
 #wrapper{
 	margin:auto;
-	max-width:1200px;
+	max-width:1080px;
 	background-color:#FFF;
 	padding:1em;
-    min-width:480px;
-	
+	width: 100%;
 }
 
 h1{
