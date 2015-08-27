@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title><?php echo $chars; ?>'s Hash Value Table, include Hash, md5, sha1, sha224, sha256, sha384, crc32... - HASH TABLE</title>
+    <link rel="stylesheet" type="text/css" href="templates/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="Keywords" content="<?php echo $chars; ?>,<?php echo join(",", array_keys($hash_rst));?>" />
+    <meta name="Description" content="<?php echo $chars; ?> hash value table." />
+    <link rel="shortcut icon" href="templates/favicon.ico"/>
+    <link rel="bookmark" href="templates/favicon.ico"/>
+</head>
+<body>
+    <div id="wrapper">
+        <p class="breadcrumb">
+            <a href="http://hash.atool.org/"><HEAD></HEAD>Home</a> &gt; <?php echo $chars; ?>
+        </p>
+        <h1>`<?php echo $chars; ?>`'s Hash Value Table: </h1>
+        <script type="text/javascript">
+        function go() {
+            var v = document.getElementById('string').value;
+            if(v == null || v == '') {v = '/';}
+            else {v = v + '.html';}
+            location.href = v;
+        }
+        </script>
+        <p>Calculate `string`'s hash value table, to http://hash.atool.org/<input id="string" type="text" placeholder="string need to be hashed" />.html&nbsp;<input type="button" onclick="go();" value="GO Hash" /></p>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+        <!-- adapte_ad -->
+        <ins class="adsbygoogle"
+             style="display:block"
+             data-ad-client="ca-pub-7292810486004926"
+             data-ad-slot="9220497478"
+             data-ad-format="auto"></ins>
+        <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+        </script>
+        <table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#CCCCCC" style="margin-bottom:1em;">
+            <tbody>
+                <tr>
+                    <th width="15%" bgcolor="#DDEEFF">Hash</th>
+                    <th width="70%" bgcolor="#DDEEFF">HASH text</th>
+                    <th width="15%" bgcolor="#DDEEFF">Time</th>
+                </tr>
+                <?php 
+                    foreach ($hash_rst as $key => $value) {
+                ?>
+                <tr>
+                    <td bgcolor="#FFFFCC"><strong><?php echo $key; ?></strong></td>
+                    <td bgcolor="#FFFFCC"><pre><?php echo $value['rst']; ?></pre></td>
+                    <td bgcolor="#FFFFCC"><?php echo $value['time']; ?></td>
+                </tr>
+                <?php 
+                    } 
+                ?>
+            </tbody>
+        </table>
+        <ul>
+            <?php 
+            $strs = "abcdefghijklmnopqrstuvwxyz 12345677890!@#$%^&*()_+-=~`[]{}\\|;':\",./<>?";
+            for($i = 0; $i < strlen($strs); $i++) {
+              $str = substr($strs, $i, 1);
+              echo '<li><a target="_blank" href="http://hash.atool.org/'.$str.'.html">'.$str.'</a></li>';
+            }
+            ?>
+        </ul>
+        <p class="footer">
+            <a href="http://hash.atool.org/">Hash Text</a> &gt; By aTool.org
+        </p>
+    </div>
+</body>
+</html>
