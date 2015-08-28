@@ -1,4 +1,5 @@
 #!/bin/sh
+#git update
 cd /home/wwwroot/default/hash-text
 
 git pull origin master
