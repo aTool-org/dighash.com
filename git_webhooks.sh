@@ -8,4 +8,4 @@ cd /home/wwwroot/default/
 
 \cp -rf hash_text/* ./
 
-echo "git webhooks update success"
+echo "update success"

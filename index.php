@@ -41,14 +41,4 @@ $app->get('/:chars.html', function ($chars) use ($app) {
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars)));
 });
 
-//git web hooks
-$app->post('/git-webhooks', function () {
-    $r = exec("./git_webhooks.sh");
-    echo json_encode(array('success'=> 1, 'msg'=> $r));
-});
-
-$app->get('/test', function () {
-    echo "hello world!";
-});
-
 $app->run();
