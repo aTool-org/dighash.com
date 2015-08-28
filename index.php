@@ -47,7 +47,7 @@ $app->post('/git-webhooks', function () {
     echo json_encode(array('success'=> 1, 'msg'=> $r));
 });
 
-$app->post('/test', function () {
+$app->get('/test', function () {
     echo "hello world!";
 });
 
