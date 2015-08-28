@@ -50,6 +50,7 @@ h1{
 	font-size:20px;
 	line-height:1.4em;
 	margin-bottom:1em;
+	word-wrap:break-word;
 }
 
 .breadcrumb {
