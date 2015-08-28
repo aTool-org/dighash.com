@@ -44,8 +44,8 @@ $app->get('/:chars.html', function ($chars) use ($app) {
 //git web hooks
 $app->get('/git-webhooks', function () {
     chmod("git_webhooks.sh", 0777);
-    r = exec("./git_webhooks.sh");
-    return json_encode({'success': 1, 'msg': r});
+    $r = exec("./git_webhooks.sh");
+    echo  json_encode(array('success'=> 1, 'msg'=> $r));
 });
 
 $app->run();
