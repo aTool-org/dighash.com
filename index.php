@@ -20,12 +20,13 @@ function cal_hash($chars) {
     $algos = hash_algos();
     $hash_rst = array();
     foreach($algos as $algo) {
-        $st = microtime();
+        // $st = microtime();
         $rst = hash($algo, $chars, false);
-        $et = microtime();
-        list($ss, $si) = explode(' ', $st);
-        list($es, $ei) = explode(' ', $et);
-        $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst, 'time' => $ei + $es - $si - $ss);
+        // $et = microtime();
+        // list($ss, $si) = explode(' ', $st);
+        // list($es, $ei) = explode(' ', $et);
+        // $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst, 'time' => $ei + $es - $si - $ss);
+        $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst);
     }
     return $hash_rst;
 }

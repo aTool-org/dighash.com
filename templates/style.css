@@ -14,9 +14,20 @@ table {
     word-wrap:break-word;
 }
 
-td,th,pre {
+td,th {
 	font-family: "Courier New", monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco;
 	font-size: 14px;
+}
+
+a {
+    font-size: .95em;
+    text-decoration: none;
+    color: #435275
+}
+
+a:hover {
+    color: #f77b6f;
+    text-decoration:underline;
 }
 
 td {

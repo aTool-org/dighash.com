@@ -39,17 +39,15 @@
         <table width="100%" border="0" cellpadding="10" cellspacing="1" bgcolor="#CCCCCC" style="margin-bottom:1em;">
             <tbody>
                 <tr>
-                    <th width="15%" bgcolor="#DDEEFF">Hash</th>
-                    <th width="70%" bgcolor="#DDEEFF">HASH text</th>
-                    <th width="15%" bgcolor="#DDEEFF">Time</th>
+                    <th width="25%" bgcolor="#DDEEFF">Hash</th>
+                    <th width="75%" bgcolor="#DDEEFF">HASH text</th>
                 </tr>
                 <?php 
                     foreach ($hash_rst as $key => $value) {
                 ?>
                 <tr>
                     <td bgcolor="#FFFFCC"><strong><?php echo $key; ?></strong></td>
-                    <td bgcolor="#FFFFCC"><pre><?php echo $value['rst']; ?></pre></td>
-                    <td bgcolor="#FFFFCC"><?php echo $value['time']; ?></td>
+                    <td bgcolor="#FFFFCC"><a href="<?php echo $value['rst']; ?>.html"><?php echo $value['rst']; ?></a></td>
                 </tr>
                 <?php 
                     } 
