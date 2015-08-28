@@ -25,7 +25,7 @@ function cal_hash($chars) {
         $et = microtime();
         list($ss, $si) = explode(' ', $st);
         list($es, $ei) = explode(' ', $et);
-        $hash_rst[$algo] = array('rst' => $rst, 'time' => $ei + $es - $si - $ss);
+        $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst, 'time' => $ei + $es - $si - $ss);
     }
     return $hash_rst;
 }
