@@ -17,15 +17,7 @@
             <a href="/"><HEAD></HEAD>Home</a> &gt; <?php echo $chars; ?>
         </p>
         <h1>`<?php echo $chars; ?>`'s Hash Value Table: </h1>
-        <script type="text/javascript">
-        function go() {
-            var v = document.getElementById('string').value;
-            if(v == null || v == '') {v = '/';}
-            else {v = v + '.html';}
-            location.href = v;
-        }
-        </script>
-        <p>Calculate `string`'s hash value table, to http://<?php echo $_SERVER['HTTP_HOST']; ?>/<input id="string" type="text" placeholder="string need to be hashed" />.html&nbsp;<input type="button" onclick="go();" value="GO Hash" /></p>
+        <p>Calculate `string`'s hash value table, to http://<?php echo $_SERVER['HTTP_HOST']; ?>/<input id="string" type="text" onkeypress="if(event.keyCode==13){go();return false;}" placeholder="string need to be hashed" />.html&nbsp;<input type="button" onclick="go();" value="Go Hash" /></p>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- adapte_ad -->
         <ins class="adsbygoogle"
@@ -54,6 +46,15 @@
                 ?>
             </tbody>
         </table>
+        <script type="text/javascript">
+        function go() {
+            var v = document.getElementById('string').value;
+            if(v == null || v == '') {v = '/';}
+            else {v = v + '.html';}
+            location.href = v;
+        }
+        document.getElementById('string').focus();
+        </script>
         <ul>
             <?php 
             $strs = "abcdefghijklmnopqrstuvwxyz 12345677890!@#$%^&*()_+-=~`[]{}\\|;':\",./<>?";
