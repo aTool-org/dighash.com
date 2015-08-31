@@ -20,25 +20,31 @@ function cal_hash($chars) {
     $algos = hash_algos();
     $hash_rst = array();
     foreach($algos as $algo) {
-        // $st = microtime();
         $rst = hash($algo, $chars, false);
-        // $et = microtime();
-        // list($ss, $si) = explode(' ', $st);
-        // list($es, $ei) = explode(' ', $et);
-        // $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst, 'time' => $ei + $es - $si - $ss);
-        $hash_rst[str_replace(",", "_", $algo)] = array('rst' => $rst);
+        $hash_rst[str_replace(",", "-", $algo)] = array('rst' => $rst);
     }
     return $hash_rst;
 }
 
+function get_randoms($n) {
+	$random = array();
+	require_once 'lib/Faker/autoload.php';
+	$faker = Faker\Factory::create();
+	for ($i = 0; $i < $n; $i ++) {
+ 		$random[] = $faker->word;
+	}
+	return $random;
+}
 // GET route
 $app->get('/', function () use ($app) {
     $chars = 'HASH';
-    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars)));
+    $random = get_randoms(40);
+    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random));
 });
 
 $app->get('/:chars.html', function ($chars) use ($app) {
-    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars)));
+	$random = get_randoms(40);
+    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random));
 });
 
 $app->run();

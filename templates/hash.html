@@ -75,6 +75,13 @@
             }
             ?>
         </ul>
+        <ul>
+            <?php 
+            for($i = 0; $i < count($random); $i++) {
+              echo '<li><a target="_blank" href="/'.$random[$i].'.html">'.$random[$i].'</a></li>';
+            }
+            ?>
+        </ul>
         <p class="footer">
             <a href="/">Hash Text</a> &gt; By aTool.org
         </p>
