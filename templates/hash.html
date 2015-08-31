@@ -27,7 +27,7 @@
         </p>
         <div style="float:right;" id="github_iframe"></div>
         <div class="bdsharebuttonbox">
-            <a href="#" class="bds_more" data-cmd="more"></a>
+            <!-- <a href="#" class="bds_more" data-cmd="more"></a> -->
             <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
             <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
             <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
@@ -37,6 +37,7 @@
             <a href="#" class="bds_youdao" data-cmd="youdao" title="分享到有道云笔记"></a>
             <a href="#" class="bds_renren" data-cmd="renren" title="分享到人人网"></a>
             <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+            <a class="bds_count" data-cmd="count"></a>
         </div>
         <h1>`<?php echo $chars; ?>`'s Hash Value Table: </h1>
         <p>Calculate `string`'s hash value table, to http://<?php echo $_SERVER['HTTP_HOST']; ?>/<input id="string" type="text" onkeypress="if(event.keyCode==13){go();return false;}" placeholder="string need to be hashed" />.html&nbsp;<input type="button" onclick="go();" value="Go Hash" /></p>
@@ -98,7 +99,8 @@
         </p>
     </div>
     <script type="text/javascript">
-        function create_github_iframe() {
+        function async_load() {
+            //async load github
             var i = document.createElement("iframe");
             i.src = "https://ghbtns.com/github-btn.html?user=hustcc&repo=hash_text&type=star&count=true";
             i.scrolling = "no";
@@ -108,13 +110,15 @@
             i.width = "170px";
             i.height = "20px";
             document.getElementById("github_iframe").appendChild(i);
+
+            //baidu share
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
         }
-        //async load github
-        if (window.addEventListener) window.addEventListener("load", create_github_iframe, false);
-        else if (window.attachEvent) window.attachEvent("onload", create_github_iframe);
-        else window.onload = create_github_iframe;
-        //baidu share
-        window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"1","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+        
+        if (window.addEventListener) {window.addEventListener("load", async_load, false);}
+        else if (window.attachEvent) {window.attachEvent("onload", async_load);}
+        else {window.onload = async_load;}
+        
     </script>
 </body>
 </html>
