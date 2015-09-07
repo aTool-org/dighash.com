@@ -14,6 +14,22 @@ table {
     word-wrap:break-word;
 }
 
+tr.table_header {
+	line-height: 15px;
+}
+
+tr {
+	line-height: 10px;
+}
+
+th {
+	background-color: #DDEEFF;
+}
+
+td {
+	background-color: #FFFFCC;
+}
+
 td,th {
 	font-family: "Courier New", monospace, Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco;
 	font-size: 14px;
@@ -82,7 +98,7 @@ h1 {
 }
 
 
-ul{
+.list ul{
 	display:inline-block;
 	vertical-align:top;
 	
@@ -93,7 +109,7 @@ ul{
 	list-style:none;
 }
 
-li{
+.list li{
 	margin:0px;
 	padding:0px;
 	margin-top:20px;
@@ -101,7 +117,7 @@ li{
 	display:inline-block;
 }
 
-li a:link{
+.list li a:link{
 	line-height:1.5em;
 	text-decoration:none;
 	background-color:#DDEEFF;
@@ -112,7 +128,7 @@ li a:link{
 	border-radius:4px;
 }
 
-li a:hover{
+.list li a:hover{
 	background-color:#09C;
 	color:#FFF;
 }
