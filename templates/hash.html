@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="templates/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="Keywords" content="<?php echo $chars; ?>,<?php echo join(",", array_keys($hash_rst));?>" />
-    <meta name="Description" content="<?php echo $chars; ?> hash value table." />
+    <meta name="Description" content="<?php echo $chars; ?> hash value table, and dig the color the the hash." />
     <link rel="shortcut icon" href="templates/favicon.ico"/>
     <link rel="bookmark" href="templates/favicon.ico"/>
     <script>
@@ -41,6 +41,7 @@
         </div>
         <h1>`<?php echo $chars; ?>`'s Hash Value Table: </h1>
         <p>to Dig `string`'s hash value table, go to http://<?php echo $_SERVER['HTTP_HOST']; ?>/<input id="string" type="text" onkeypress="if(event.keyCode==13){go();return false;}" placeholder="string need to be hashed" />.html&nbsp;<input type="button" onclick="go();" value="Dig Hash" /></p>
+        <p>We can calculate the string's Hash chars, and dig <strong>the color of the hash</strong>.</p>
         <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         <!-- adapte_ad -->
         <ins class="adsbygoogle"
@@ -61,7 +62,7 @@
                     foreach ($hash_rst as $key => $value) {
                 ?>
                 <tr>
-                    <td><strong><?php echo $key; ?></strong></td>
+                    <td bgcolor="#<?php echo $value['color']; ?>"><strong><?php echo $key; ?></strong></td>
                     <td><a href="<?php echo $value['rst']; ?>.html"><?php echo $value['rst']; ?></a></td>
                 </tr>
                 <?php 

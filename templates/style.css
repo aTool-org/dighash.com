@@ -19,14 +19,14 @@ tr.table_header {
 }
 
 tr {
-	line-height: 10px;
+	line-height: 12px;
 }
 
 th {
 	background-color: #DDEEFF;
 }
 
-td {
+tr td:nth-child(2) {
 	background-color: #FFFFCC;
 }
 

@@ -21,7 +21,7 @@ function cal_hash($chars) {
     $hash_rst = array();
     foreach($algos as $algo) {
         $rst = hash($algo, $chars, false);
-        $hash_rst[str_replace(",", "-", $algo)] = array('rst' => $rst);
+        $hash_rst[str_replace(",", "-", $algo)] = array('rst' => $rst, 'color' => substr($rst, -6));
     }
     return $hash_rst;
 }
