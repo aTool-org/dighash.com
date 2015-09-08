@@ -47,7 +47,7 @@ function do_history($chars, $max = 20) {
         return array_keys($history);
     }
     if (count($history) > $max) {
-        array_pop($history);
+        array_shift($history);
     }
     $history[$chars] = '';
     // array_push($history, array($chars => ''));
