@@ -8,4 +8,6 @@ cd /home/wwwroot/dighash/
 
 \cp -rf hash_text/* ./
 
+chmod -R 777 /home/wwwroot/dighash/tmp/
+
 echo "update success"

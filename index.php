@@ -35,16 +35,38 @@ function get_randoms($n) {
 	}
 	return $random;
 }
+
+function do_history($chars, $max = 20) {
+    require_once 'lib/php-file-cache/fcache.inc.php';
+    $fcache = new FCache();
+    $history = $fcache->get('hash_history');
+    if (! $history) {
+        $history = array();
+    }
+    if (array_key_exists($chars, $history)) {
+        return array_keys($history);
+    }
+    if (count($history) > $max) {
+        array_pop($history);
+    }
+    $history[$chars] = '';
+    // array_push($history, array($chars => ''));
+    $fcache->add('hash_history', $history);
+    return array_keys($history);
+}
+
 // GET route
 $app->get('/', function () use ($app) {
-    $chars = 'HASH';
-    $random = get_randoms(40);
-    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random));
+    $chars = 'DigHash';
+    $random = get_randoms(20);
+    $history = array();
+    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
 
 $app->get('/:chars.html', function ($chars) use ($app) {
-	$random = get_randoms(40);
-    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random));
+	$random = get_randoms(20);
+    $history = do_history($chars);
+    $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
 
 $app->run();

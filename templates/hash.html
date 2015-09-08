@@ -80,6 +80,7 @@
         }
         document.getElementById('string').focus();
         </script>
+        <p> 1. Basic Words</p>
         <ul class="list">
             <?php 
             $strs = "abcdefghijklmnopqrstuvwxyz 12345677890!@#$%^&*()_+-=~`[]{}\\|;':\",./<>?";
@@ -89,10 +90,19 @@
             }
             ?>
         </ul>
+        <p> 2. Random Words</p>
         <ul class="list">
             <?php 
             for($i = 0; $i < count($random); $i++) {
               echo '<li><a target="_blank" href="/'.$random[$i].'.html">'.$random[$i].'</a></li>';
+            }
+            ?>
+        </ul>
+        <p> 3. Recent Dig History</p>
+        <ul class="list">
+            <?php 
+            for($i = 0; $i < count($history); $i++) {
+              echo '<li><a target="_blank" href="/'.$history[$i].'.html">'.$history[$i].'</a></li>';
             }
             ?>
         </ul>
