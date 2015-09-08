@@ -60,7 +60,7 @@ function do_history($chars, $max = 20) {
 $app->get('/', function () use ($app) {
     $chars = 'DigHash';
     $random = get_randoms(20);
-    $history = array();
+    $history = do_history($chars);
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
 
