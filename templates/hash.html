@@ -4,7 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta charset="utf-8" />
     <link rel="alternate" hreflang="en" href="http://dighash.com/" />
-    <title><?php echo $chars; ?>'s Hash Value Table, include Hash, md5, sha1, sha224, sha256, sha384, crc32... - HASH TABLE</title>
+    <title><?php echo $chars; ?>'s Hash Value Table, include Hash, md5, sha1, sha224, sha256, sha384, crc32... - Dig HASH</title>
     <link rel="stylesheet" type="text/css" href="templates/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
     <meta name="Keywords" content="<?php echo $chars; ?>,<?php echo join(",", array_keys($hash_rst));?>" />
@@ -102,15 +102,16 @@
         <ul class="list">
             <?php 
             for($i = 0; $i < count($history); $i++) {
-              echo '<li><a target="_blank" href="/'.$history[$i].'.html">'.$history[$i].'</a></li>';
+              echo '<li><a target="_blank" href="/'.$history[$i].'.html"></a></li>';
             }
             ?>
         </ul>
+        <p> 4. Friend links</p>
         <ul class="list">
-            <script type="text/javascript" src="http://links.webscan.360.cn/index/index/af87311db9fd1e0545efb55c36ebdd5b"></script>
+            <li><a target="_blank" href="http://www.puavip.com/">Pua</a></li>
         </ul>
         <p class="footer">
-            <a href="/">digHash.com</a> &gt; Author By aTool.org
+            <a href="/">DigHash.com</a> &gt; Author By aTool.org
         </p>
     </div>
 
