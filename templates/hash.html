@@ -86,7 +86,7 @@
             $strs = "abcdefghijklmnopqrstuvwxyz 12345677890!@#$%^&*()_+-=~`[]{}\\|;':\",./<>?";
             for($i = 0; $i < strlen($strs); $i++) {
               $str = substr($strs, $i, 1);
-              echo '<li><a target="_blank" href="/'.$str.'.html">'.$str.'</a></li>';
+              echo '<li><a target="_blank" href="'.$str.'.html">'.$str.'</a></li>';
             }
             ?>
         </ul>
@@ -94,7 +94,7 @@
         <ul class="list">
             <?php 
             for($i = 0; $i < count($random); $i++) {
-              echo '<li><a target="_blank" href="/'.$random[$i].'.html">'.$random[$i].'</a></li>';
+              echo '<li><a target="_blank" href="'.$random[$i].'.html">'.$random[$i].'</a></li>';
             }
             ?>
         </ul>
@@ -102,7 +102,7 @@
         <ul class="list">
             <?php 
             for($i = 0; $i < count($history); $i++) {
-              echo '<li><a target="_blank" href="/'.$history[$i].'.html"></a></li>';
+              echo '<li><a target="_blank" href="'.$history[$i].'.html">'.$history[$i].'</a></li>';
             }
             ?>
         </ul>

@@ -47,10 +47,11 @@ function do_history($chars, $max = 20) {
         return array_keys($history);
     }
     if (count($history) > $max) {
-        array_shift($history);
+        // array_shift($history);
+        $key_del = array_rand($history, 1);
+        unset($history[$key_del]);
     }
     $history[$chars] = '';
-    // array_push($history, array($chars => ''));
     $fcache->add('hash_history', $history);
     return array_keys($history);
 }
