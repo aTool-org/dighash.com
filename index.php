@@ -50,7 +50,6 @@ function do_history($chars, $max = 20) {
         array_shift($history);
     }
     $history[$chars] = '';
-    // array_push($history, array($chars => ''));
     $fcache->add('hash_history', $history);
     return array_keys($history);
 }
@@ -67,6 +66,9 @@ $app->get('/:chars.html', function ($chars) use ($app) {
 	$random = get_randoms(20);
     $history = do_history($chars);
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
+});
+$app->get('/:others', function ($others) use ($app) {
+    $app->redirect('/', 301);
 });
 
 $app->run();
