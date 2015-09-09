@@ -47,7 +47,8 @@ function do_history($chars, $max = 20) {
         return array_keys($history);
     }
     if (count($history) > $max) {
-        array_shift($history);
+        $key_del = array_rand($history, 1);
+        unset($history[$key_del]);
     }
     $history[$chars] = '';
     $fcache->add('hash_history', $history);
@@ -58,7 +59,7 @@ function do_history($chars, $max = 20) {
 $app->get('/', function () use ($app) {
     $chars = 'DigHash';
     $random = get_randoms(20);
-    $history = array();
+    $history = do_history($chars);
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
 
@@ -67,6 +68,7 @@ $app->get('/:chars.html', function ($chars) use ($app) {
     $history = do_history($chars);
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
+
 $app->get('/:others', function ($others) use ($app) {
     $app->redirect('/', 301);
 });
