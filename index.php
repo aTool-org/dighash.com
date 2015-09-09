@@ -69,7 +69,7 @@ $app->get('/:chars.html', function ($chars) use ($app) {
     $app->render('hash.html', array('chars' => $chars, 'hash_rst' => cal_hash($chars), 'random' => $random, 'history' => $history));
 });
 
-$app->get('/:others', function ($others) use ($app) {
+$app->notFound(function () use ($app) {
     $app->redirect('/', 301);
 });
 
